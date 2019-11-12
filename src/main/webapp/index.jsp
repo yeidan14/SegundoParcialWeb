@@ -58,7 +58,7 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
              
-                <img src="Librerias/assets/img/sello.png" width=60%">
+                <img src="Librerias/assets/img/sello.png" width=100%">
             </ol>
           </nav>
           <h4 class="content-title content-title-xs"></h4>
