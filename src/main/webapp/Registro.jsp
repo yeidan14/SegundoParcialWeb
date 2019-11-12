@@ -38,6 +38,7 @@
           <h4 class="signup-title">REGISTRO</h4>
           <h5 class="signup-subtitle">Registra tu usuario</h5>
           <div class="signup-form">
+              
               <form name="registro" action="Registro.do">
 
             <div class="row">
@@ -49,7 +50,7 @@
               </div><!-- col -->
               <div class="col-sm-6">
                 <div class="form-group">
-                  <label>Apllicods</label>
+                  <label>Apllidos</label>
                   <input type="text" name="apellido" class="form-control" placeholder="Enter your lastname" value="Christensen">
                 </div>
               </div><!-- col -->
