@@ -24,7 +24,7 @@ public class Conexion {
     private final EntityManagerFactory bd; 
 
     private  Conexion() {
-        this.bd=Persistence.createEntityManagerFactory("SegundoP");
+        this.bd=Persistence.createEntityManagerFactory("nomina");
         
     }
     
@@ -46,10 +46,10 @@ public class Conexion {
         Connection cn = null;
         try {
         //?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC
-            String url = "jdbc:mysql://localhost:3306/segundo_parcial";
+            String url = "jdbc:mysql://savucv.cly49ofno0yf.us-east-1.rds.amazonaws.com:3306/nomina";
             String Driver = "com.mysql.jdbc.Driver";
-            String user = "root";
-            String clave = "";
+            String user = "yeidan";
+            String clave = "yeidan141995";
             Class.forName(Driver);
             cn = DriverManager.getConnection(url, user, clave);
             

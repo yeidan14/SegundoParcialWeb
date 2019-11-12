@@ -5,11 +5,13 @@
  */
 package com.mycompany.segudoprevio.controller;
 
-import com.mycompany.segudoprevio.dao.PersonaJpaController;
-import com.mycompany.segudoprevio.dao.Utilidad;
-import com.mycompany.segudoprevio.dto.Persona;
+import com.mycompany.segudoprevio.dao.EmpleadoJpaController;
+
+import com.mycompany.segudoprevio.dto.Empleado;
+
 import java.io.IOException;
-import java.io.PrintWriter;
+
+import java.sql.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -33,40 +35,40 @@ public class Agregar extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-           throws ServletException, IOException {
+            throws ServletException, IOException {
 
-        String documento = request.getParameter("documento");
-        String email = request.getParameter("email");
-        String nombres = request.getParameter("nombres");
-        String apellidos = request.getParameter("apellidos");
-        String nacionalidad = request.getParameter("nacionalidad");
-        String edad =request.getParameter("edad");
-       
+        String cod = request.getParameter("codigo");
+        String cedula = request.getParameter("cedula");
+        String nombres = request.getParameter("nombre");
+        String fnacimiento = request.getParameter("fnacimiento");
+        Date fn = Date.valueOf(fnacimiento);
+        String fingreso = request.getParameter("fingreso");
+        Date fi = Date.valueOf(fingreso);
+        String fretiro = request.getParameter("fretiro");
+        Date fr = Date.valueOf(fretiro);
 
-        Persona nuevo = new Persona();
-        nuevo.setDocumento(documento);
-        nuevo.setNombres(nombres);
-        nuevo.setApellidos(apellidos);
-        nuevo.setEmail(email);
-        nuevo.setEdad(edad);        
-        nuevo.setNacionalidad(nacionalidad);
-       Utilidad u=new Utilidad();
+        Empleado e = new Empleado();
+        e.setCedula(cedula);
+        e.setCodigo(cod);
+        e.setNombre(nombres);
+        e.setFechanacimiento(fn);
+        e.setFechaingreso(fr);
+        e.setFecharetiro(fr);
         Conexion con = Conexion.getConexion();
-        PersonaJpaController per = new PersonaJpaController(con.getBd());
-      
-        try {            
-            if(per.findPersona(documento)==null){
-                per.create(nuevo);
-            String registrado="registrado";
-            request.setAttribute("registrado", registrado);
-            request.getRequestDispatcher("Agregar.jsp").forward(request, response);
-            
-            }
-            else{
-            
-                 String registrado="yaexiste";
-            request.setAttribute("registrado", registrado);
-            request.getRequestDispatcher("Agregar.jsp").forward(request, response);
+        EmpleadoJpaController per = new EmpleadoJpaController(con.getBd());
+
+        try {
+            if (per.findEmpleado(cod) == null) {
+                per.create(e);
+                String registrado = "registrado";
+                request.setAttribute("registrado", registrado);
+                request.getRequestDispatcher("Agregar.jsp").forward(request, response);
+
+            } else {
+
+                String registrado = "yaexiste";
+                request.setAttribute("registrado", registrado);
+                request.getRequestDispatcher("Agregar.jsp").forward(request, response);
             }
         } catch (Exception ex) {
             Logger.getLogger(Agregar.class.getName()).log(Level.SEVERE, null, ex);

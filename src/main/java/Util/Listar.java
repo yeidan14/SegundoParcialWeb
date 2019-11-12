@@ -6,11 +6,12 @@
 package Util;
 
 import com.mycompany.segudoprevio.controller.Conexion;
-import com.mycompany.segudoprevio.dto.Persona;
+import com.mycompany.segudoprevio.dto.Empleado;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -22,29 +23,34 @@ public class Listar implements I_Listar {
     Connection cn = Conexion.getConexion2();
 
     @Override
-    public List<Persona> Personas() {
-        List<Persona> listPersonas = new ArrayList<Persona>();
+    public Empleado BuscarEmpleado(String cod) {
+        Empleado n =new Empleado();
         try {
-            String sql = "SELECT * FROM persona";
+            String sql = "SELECT * FROM empleado";
             PreparedStatement pstm = cn.prepareStatement(sql);
             ResultSet rs = pstm.executeQuery();
 
             while (rs.next()) {
-                String doc = rs.getString(1);
-                String nombre = rs.getString(2);
-                String apellidos = rs.getString(3);
-                String emai = rs.getString(4);
-                String edad = rs.getString(5);
-                String nacionalidad = rs.getString(6);
+                String codigo = rs.getString(1);
+                String cedula = rs.getString(2);
+                String nombre = rs.getString(3);
+                Date fn = rs.getDate(4);
+                Date fi = rs.getDate(5);
+                Date fr = rs.getDate(6);
 
-                Persona p = new Persona(doc, nombre, apellidos, emai, edad, nacionalidad);
+               n.setCodigo(codigo);
+               n.setCedula(cedula);
+               n.setNombre(nombre);
+               n.setFechanacimiento(fn);
+               n.setFechaingreso(fi);
+               n.setFecharetiro(fr);
 
-                listPersonas.add(p);
+              
             }
 
         } catch (Exception e) {
         }
-        return listPersonas;
+        return n;
     }
 
 //    @Override

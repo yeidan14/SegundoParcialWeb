@@ -26,56 +26,17 @@
         <link href="Librerias/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
         <link href="Librerias/ionicons/css/ionicons.min.css" rel="stylesheet">
         <link href="Librerias/jqvmap/jqvmap.min.css" rel="stylesheet">
+            <link href="Librerias/prismjs/themes/prism-tomorrow.css" rel="stylesheet">
 
         <!-- template css -->
         <link rel="stylesheet" href="Librerias/assets/css/cassie.css">
     </head>
     <body>
 
-        <div class="sidebar">
-            <div class="sidebar-header">
-                <div>
-                    <a href="Librerias/index.html" class="sidebar-logo"><span>Segundo Parcial</span></a>
-                    <small class="sidebar-logo-headline">Yeison Daniel Manrique Camacho 1150966</small>
-                </div>
-            </div><!-- sidebar-header -->
-            <div id="dpSidebarBody" class="sidebar-body">
-                <ul class="nav nav-sidebar">
-                    <li class="nav-label"><label class="content-label">Paginas Necesarias</label></li>
-                    <li class="nav-item show">
-                        <a href="" class="nav-link with-sub active"><i data-feather="box"></i> Dashboard</a>
-                        <nav class="nav nav-sub">
-                            <a href="index.jsp" class="nav-sub-link active">Pagina en Blanco</a>
-                            <a href="Login.jsp" class="nav-sub-link">Login</a>
-                            <a href="Agregar.jsp" class="nav-sub-link">Agregar</a>
-                            <a href="editar.jsp" class="nav-sub-link">Editar</a>
-                            <a href="Listar.jsp" class="nav-sub-link">Listar</a>
-                        </nav>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="" class="nav-link with-sub"><i data-feather="lock"></i> Authentication</a>
-                        <nav class="nav nav-sub">
-                            <a href="Login.jsp" class="nav-sub-link">Inicio</a>
-                            <a href="Registro.jsp" class="nav-sub-link">Registro</a>             
-                        </nav>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link with-sub"><i data-feather="x-circle"></i> Error Pages</a>
-                        <nav class="nav nav-sub">
-                            <a href="page-404.jsp" class="nav-sub-link">Page Not Found</a>
-                            <a href="page-500.jsp" class="nav-sub-link">Internal Server Error</a>
-                            <a href="page-503.jsp" class="nav-sub-link">Service Unavailable</a>
-                            <a href="page-505.jsp" class="nav-sub-link">Forbidden Access</a>
-                        </nav>
-                    </li>
-
-
-                </ul>
-
-
-            </div>
-        </div><!-- sidebar -->
+         <div   id="menu" >
+        
+        
+        </div>
 
         <div class="content">
             <div class="header">
@@ -115,44 +76,50 @@
             </div>
              <%}         %>
          
-          <div class="input-group mg-b-10">
+             
+             
+                 
+                 
+             
+          <div class="input-group parsley-input mg-b-10">
             <div class="input-group-prepend">
-              <span class="input-group-text">Documento</span>
-                        </div>
-              <input type="text"  name="documento" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" required>
+              <span class="input-group-text">Codigo</span>
+                        </div>              
+              
+              <input type="text" maxlength="5"  name="codigo" class="form-control parsley-input" required>
           </div>
             <div class="input-group mg-b-10">
             <div class="input-group-prepend">
-              <span class="input-group-text">Nombres   </span>
+              <span class="input-group-text">Cedula   </span>
                         </div>
-                <input type="text"  name="nombres" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" required=""/>
+                <input type="text" maxlength="15"  name="cedula" class="form-control"  required=""/>
           </div>
           
             <div class="input-group mg-b-10">
             <div class="input-group-prepend">
-              <span class="input-group-text">Apellidos </span>
+              <span class="input-group-text">Nombres </span>
                         </div>
-                <input type="text"  name="apellidos" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" required=""/>
+                <input type="text" maxlength="50"  name="nombre" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" required=""/>
           </div>
           
             <div class="input-group mg-b-10">
             <div class="input-group-prepend">
-              <span class="input-group-text">Edad   </span>
+              <span class="input-group-text">Fecha Nacimiento   </span>
                         </div>
-                <input type="text"  name="edad" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" required=""/>
+                <input type="date"  name="fnacimiento" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" required=""/>
           </div>
   <div class="input-group mg-b-10">
             <div class="input-group-prepend">
-              <span class="input-group-text">Nacionalidad</span>
+              <span class="input-group-text">Fecha Ingreso</span>
                         </div>
-      <input type="text"  name="nacionalidad" class="form-control" aria-label="Dollar amount (with dot and two decimal places)"required=""/>
+      <input type="date"  name="fingreso" class="form-control" aria-label="Dollar amount (with dot and two decimal places)"required=""/>
           </div>
           
             <div class="input-group mg-b-10">
             <div class="input-group-prepend">
-              <span class="input-group-text">Email</span>
+              <span class="input-group-text">Fecha Retiro</span>
                         </div>
-                <input type="text"  name="email" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" required=""/>
+                <input type="date"  name="fretiro" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" required=""/>
           </div>
           
                          
@@ -184,5 +151,9 @@
         <script src="Librerias/assets/js/flot.sampledata.js"></script>
         <script src="Librerias/assets/js/vmap.sampledata.js"></script>
         <script src="Librerias/assets/js/dashboard-one.js"></script>
+          <script src="Librerias/prismjs/prism.js"></script>
+    <script src="Librerias/parsleyjs/parsley.min.js"></script>
+    <script src="Librerias/js-cookie/js.cookie.js"></script>
+
     </body>
 </html>

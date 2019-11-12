@@ -15,6 +15,6 @@ import com.mycompany.segudoprevio.dto.*;
 public interface I_Listar {
     
 //    public String agregar(Alumno alumno);
-    public List<Persona> Personas();
+    public Empleado BuscarEmpleado(String cod);
 //    public List<Alumno> ListarAlumnosComputacion();
 }
