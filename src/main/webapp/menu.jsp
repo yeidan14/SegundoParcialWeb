@@ -11,6 +11,7 @@
                 <div>
                     <a href="index.jsp" class="sidebar-logo"><span>Segundo Parcial</span></a>
                     <small class="sidebar-logo-headline">Yeison Daniel Manrique Camacho 1150966</small>
+                    <small class="sidebar-logo-headline">Camilo Alezander Jauregui Rojas 1151408</small>
                 </div>
             </div><!-- sidebar-header -->
             <div id="dpSidebarBody" class="sidebar-body">
@@ -22,6 +23,7 @@
                                                  
                             <a href="Agregar.jsp" class="nav-sub-link">Registrar</a>                          
                             <a href="Listar.jsp" class="nav-sub-link">Buscar</a>
+                             <a href="Listar_concepto.jsp" class="nav-sub-link">Lista de Conceptos</a>
                         </nav>
                     </li>
 

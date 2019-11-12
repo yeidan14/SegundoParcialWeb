@@ -2,14 +2,12 @@ C:\Users\Lenovo\Documents\NetBeansProjects\SegudoPrevio\src\main\java\com\mycomp
 C:\Users\Lenovo\Documents\NetBeansProjects\SegudoPrevio\src\main\java\com\mycompany\segudoprevio\dto\Proceso.java
 C:\Users\Lenovo\Documents\NetBeansProjects\SegudoPrevio\src\main\java\com\mycompany\segudoprevio\dao\ProcesoJpaController.java
 C:\Users\Lenovo\Documents\NetBeansProjects\SegudoPrevio\src\main\java\com\mycompany\segudoprevio\controller\Agregar.java
-C:\Users\Lenovo\Documents\NetBeansProjects\SegudoPrevio\src\main\java\Util\I_Listar.java
+C:\Users\Lenovo\Documents\NetBeansProjects\SegudoPrevio\src\main\java\com\mycompany\segudoprevio\controller\Buscar.java
 C:\Users\Lenovo\Documents\NetBeansProjects\SegudoPrevio\src\main\java\com\mycompany\segudoprevio\dao\exceptions\NonexistentEntityException.java
 C:\Users\Lenovo\Documents\NetBeansProjects\SegudoPrevio\src\main\java\com\mycompany\segudoprevio\dao\TipoconceptoJpaController.java
-C:\Users\Lenovo\Documents\NetBeansProjects\SegudoPrevio\src\main\java\com\mycompany\segudoprevio\controller\Eliminar.java
 C:\Users\Lenovo\Documents\NetBeansProjects\SegudoPrevio\src\main\java\com\mycompany\segudoprevio\dao\EmpleadoJpaController.java
 C:\Users\Lenovo\Documents\NetBeansProjects\SegudoPrevio\src\main\java\com\mycompany\segudoprevio\dao\ConceptoJpaController.java
 C:\Users\Lenovo\Documents\NetBeansProjects\SegudoPrevio\src\main\java\com\mycompany\segudoprevio\dto\Concepto.java
-C:\Users\Lenovo\Documents\NetBeansProjects\SegudoPrevio\src\main\java\Util\Listar.java
 C:\Users\Lenovo\Documents\NetBeansProjects\SegudoPrevio\src\main\java\com\mycompany\segudoprevio\dto\Tercero.java
 C:\Users\Lenovo\Documents\NetBeansProjects\SegudoPrevio\src\main\java\com\mycompany\segudoprevio\dto\Tipoconcepto.java
 C:\Users\Lenovo\Documents\NetBeansProjects\SegudoPrevio\src\main\java\com\mycompany\segudoprevio\dao\exceptions\PreexistingEntityException.java

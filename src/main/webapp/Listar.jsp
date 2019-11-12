@@ -3,6 +3,7 @@
     Created on : 10/11/2019, 05:42:29 PM
     Author     : Daniel
 --%>
+<%@page import="com.mycompany.segudoprevio.dto.Empleado"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
@@ -21,7 +22,7 @@
 
         <!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="Librerias/assets/img/favicon.png">
-  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+        <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
         <title>Principal</title>
 
         <!-- vendor css -->
@@ -34,10 +35,10 @@
     </head>
     <body>
         <div   id="menu" >
-        
-        
+
+
         </div>
-  <div class="content">
+        <div class="content">
             <div class="header">
                 <div class="header-left">
                     <a href="" class="burger-menu"><i data-feather="menu"></i></a>
@@ -45,9 +46,9 @@
 
                 </div><!-- header-left -->
                 <div class="header-right" id="user">
-               
-            </div><!-- header -->
-        </div>
+
+                </div><!-- header -->
+            </div>
             <div class="content-header">
                 <div>
                     <nav aria-label="breadcrumb">
@@ -59,11 +60,7 @@
                     </nav>
                     <h4 class="content-title content-title-xs"></h4>
                 </div>
-                
-                 <div class="header-search">
-            <i data-feather="search"></i>
-            <input type="search" class="form-control" placeholder="What are you looking for?">
-          </div>
+
             </div><!-- content-header -->
             <div class="content-body">
 
@@ -71,70 +68,89 @@
 
                     <div class="card card-body">
 
-                        <%String registrado = (String) request.getAttribute("nombre");
-                            if (registrado == "eliminado") {%>
-                        <div class="alert alert-success" role="alert">
-                            Perfecto Usuario Eliminado !
-                        </div>
-                        <%}%>
+                        <span>Buscar Empleado:</span>
+                        <form action="Buscar.do">
+                            <div class="header-search">
+                                <i data-feather="search"></i>
+
+                                <input type="search" name="codigo"  maxlength="5" class="form-control" placeholder="Codigo del Empleado" required>
+                                <button type="submit" class="btn btn-primary btn-block">Buscar</button>
+
+                            </div>
+                        </form>
+                        <br><br>
+                        <% String prueba=(String)request.getAttribute("estado");
+                        System.err.println(""+prueba);
+                            Empleado e = (Empleado) request.getAttribute("empleado");
+
+                        if (e==null) {%>
+                        
+
+                        <%} else {%>
+
+
                         <div class="table-responsive">
                             <table class="table mg-b-0">
                                 <thead>
                                     <tr>
-                                        <th>Documento</th>
-                                        <th>Nombres </th>
-                                        <th>Apellidos</th>
-                                        <th>Email</th>
-                                        <th>Edad</th>
-                                        <th>Nacionalidad</th>
-                                        <th>Modificar</th>
+                                        <th>Codigo</th>
+                                        <th>Cedula</th>
+                                        <th>Nombres</th>
+                                        <th>Fecha Nacimiento</th>
+                                        <th>Fecha Ingreso</th>
+                                        <th>Fecha Retiro</th>
+                                       
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
-                                    <jsp:useBean class="Util.Listar" id="listar"></jsp:useBean>
-                                    
-                                        <tr>
-                                            <td>${listar.documento}</td>
-                                            <td>${listar.nombres}</td>
-                                            <td>${listar.apellidos}</td>
-                                            <td>${listar.email}</td>
-                                            <td>${listar.edad}</td>
-                                            <td>${listar.nacionalidad}</td>
-                                    <form action="Eliminar.do">
-                                        <input name="doc" style="visibility: hidden" value="${listar.documento}"/>       
-                                        <td>                                              
 
-                                            <button id="send"  type="submit" class="btn btn-danger btn-round ">Eliminar</button>
 
-                                        </td>
-                                    </form>
-                                    </tr>
-                                </c:forEach>  
+                                    <tr>
+                                        <td><%=e.getCodigo()%></td>
+                                        <td><%=e.getCedula()%></td>
+                                        <td><%=e.getNombre()%></td>
+                                        <td><%=e.getFechanacimiento()%></td>
+                                        <td><%=e.getFechaingreso()%></td>
+                                        <td><%=e.getFecharetiro()%></td>
+                                        
+                            
+                                </tr>
+
                                 </tbody>
                             </table>
-                        </div><!-- table-responsive -->
+                        </div>
+                        <%} if(prueba=="noencontrado"){%>
+                         <div class="alert alert-danger" role="alert">
+              Empleado No encontrado!
+            </div>
+                       <%}if(prueba=="eliminado"){%>
+                         <div class="alert alert-danger" role="alert">
+              Empleado Eliminado Correctamente!
+            </div>
+                       <%}%>
+
+                        <!-- table-responsive -->
                     </div>
                 </div>
-                </div><!-- content-body -->
+            </div><!-- content-body -->
             <!-- content -->
-  </div>
-            <script src="Librerias/jquery/jquery.min.js"></script>
-            <script src="Librerias/bootstrap/js/bootstrap.bundle.min.js"></script>
-            <script src="Librerias/feather-icons/feather.min.js"></script>
-            <script src="Librerias/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-            <script src="Librerias/js-cookie/js.cookie.js"></script>
-            <script src="Librerias/chart.js/Chart.bundle.min.js"></script>
-            <script src="Librerias/jquery.flot/jquery.flot.js"></script>
-            <script src="Librerias/jquery.flot/jquery.flot.stack.js"></script>
-            <script src="Librerias/jquery.flot/jquery.flot.resize.js"></script>
-            <script src="Librerias/jquery.flot/jquery.flot.threshold.js"></script>
-            <script src="Librerias/jqvmap/jquery.vmap.min.js"></script>
-            <script src="Librerias/jqvmap/maps/jquery.vmap.world.js"></script>
+        </div>
+        <script src="Librerias/jquery/jquery.min.js"></script>
+        <script src="Librerias/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="Librerias/feather-icons/feather.min.js"></script>
+        <script src="Librerias/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        <script src="Librerias/js-cookie/js.cookie.js"></script>
+        <script src="Librerias/chart.js/Chart.bundle.min.js"></script>
+        <script src="Librerias/jquery.flot/jquery.flot.js"></script>
+        <script src="Librerias/jquery.flot/jquery.flot.stack.js"></script>
+        <script src="Librerias/jquery.flot/jquery.flot.resize.js"></script>
+        <script src="Librerias/jquery.flot/jquery.flot.threshold.js"></script>
+        <script src="Librerias/jqvmap/jquery.vmap.min.js"></script>
+        <script src="Librerias/jqvmap/maps/jquery.vmap.world.js"></script>
 
-            <script src="Librerias/assets/js/cassie.js"></script>
-            <script src="Librerias/assets/js/flot.sampledata.js"></script>
-            <script src="Librerias/assets/js/vmap.sampledata.js"></script>
-            <script src="Librerias/assets/js/dashboard-one.js"></script>
+        <script src="Librerias/assets/js/cassie.js"></script>
+        <script src="Librerias/assets/js/flot.sampledata.js"></script>
+        <script src="Librerias/assets/js/vmap.sampledata.js"></script>
+        <script src="Librerias/assets/js/dashboard-one.js"></script>
     </body>
 </html>
